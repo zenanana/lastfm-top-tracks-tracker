@@ -1,0 +1,45 @@
+{
+    "configurations": [
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Docker: Attach to Node",
+            "remoteRoot": "/usr/src/app"
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "lastfm_top_tracks_tracker:HelloWorldFunction (nodejs16.x)",
+            "invokeTarget": {
+                "target": "template",
+                "templatePath": "${workspaceFolder}/lastfm_top_tracks_tracker/template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "lambda": {
+                "payload": {},
+                "environmentVariables": {},
+                "runtime": "nodejs16.x"
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "API lastfm_top_tracks_tracker:HelloWorldFunction (nodejs16.x)",
+            "invokeTarget": {
+                "target": "api",
+                "templatePath": "${workspaceFolder}/lastfm_top_tracks_tracker/template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "api": {
+                "path": "/hello",
+                "httpMethod": "get",
+                "payload": {
+                    "json": {}
+                }
+            },
+            "lambda": {
+                "runtime": "nodejs16.x"
+            }
+        }
+    ]
+}
