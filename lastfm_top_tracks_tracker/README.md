@@ -1,9 +1,3 @@
-# lastfm_top_tracks_tracker
-
-Last.fm is cool. It's 'Top Track' functionality is less cool. This lambda function is scheduled to run once per day to track the top track of a user over the course of time.
-
----
-
 ## AWS Stuff
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
